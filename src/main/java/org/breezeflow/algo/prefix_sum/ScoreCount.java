@@ -3,7 +3,7 @@ package org.breezeflow.algo.prefix_sum;
 /**
  * 算法技巧(前缀和)训练案例:统计分数区间中学生的个数
  *
- * @author chenh/S26377
+ * @author breezeflow
  * @date 2023/02/07
  */
 public class ScoreCount {
