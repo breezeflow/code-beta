@@ -1,7 +1,7 @@
 package org.breezeflow.algo.search;
 
 /**
- * @author chenh/S26377
+ * @author breezeflow
  * @date 2022/12/27
  */
 public class SearchAlgoTest {
