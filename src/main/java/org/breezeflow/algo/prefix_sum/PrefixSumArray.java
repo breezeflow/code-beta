@@ -3,33 +3,31 @@ package org.breezeflow.algo.prefix_sum;
 import java.util.Arrays;
 
 /**
- * 前缀和
+ * 前缀和 数组
  */
 public class PrefixSumArray {
 
     //前缀和数组
-    private int[] diff;
+    private int[] sum;
 
     /**
-     * 前缀和数组
+     * 构造前缀和数组：sum[n]为前n个数的和
      *
      * @param nums
      * @return
      */
     public int[] buildDiff(int[] nums) {
-        diff = new int[nums.length];
-        diff[0] = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            diff[i] = diff[i - 1] + nums[i];
+        sum = new int[nums.length + 1];
+        for (int i = 1; i < sum.length; i++) {
+            sum[i] = sum[i - 1] + nums[i - 1];
         }
-        return diff;
+        return sum;
     }
 
     public int[] buildResult() {
-        int[] res = new int[diff.length];
-        res[0] = diff[0];
-        for (int i = 1; i < diff.length; i++) {
-            res[i] = diff[i] - diff[i - 1];
+        int[] res = new int[sum.length - 1];
+        for (int i = 1; i < sum.length; i++) {
+            res[i - 1] = sum[i] - sum[i - 1];
         }
         return res;
     }
