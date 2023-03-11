@@ -1,16 +1,19 @@
 package org.breezeflow.spring.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author andy
- * @create 2023/03/09
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     private Long id;
 
     private String name;
-    
+
 }

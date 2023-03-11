@@ -5,7 +5,6 @@ import org.breezeflow.spring.annotation.Super;
 
 /**
  * @author andy
- * @create 2023/03/10
  */
 @Super
 @Data
