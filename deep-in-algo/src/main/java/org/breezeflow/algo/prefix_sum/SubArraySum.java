@@ -1,11 +1,9 @@
 package org.breezeflow.algo.prefix_sum;
 
 /**
- * 算法技巧(前缀和)训练案例:和为 K 的子数组
+ * 算法技巧(前缀和)训练案例:<a href="https://leetcode.cn/problems/subarray-sum-equals-k/">和为 K 的子数组</a>
  *
- * @author breezeflow
- * @link https://leetcode.cn/problems/subarray-sum-equals-k/
- * @date 2023/02/08
+ * @author andy
  */
 public class SubArraySum {
 

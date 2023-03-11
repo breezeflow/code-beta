@@ -2,6 +2,8 @@ package org.breezeflow.algo.search;
 
 /**
  * 二分查找——最后一个小于等于给定值的元素
+ *
+ * @author andy
  */
 public class BinarySearch04 {
 

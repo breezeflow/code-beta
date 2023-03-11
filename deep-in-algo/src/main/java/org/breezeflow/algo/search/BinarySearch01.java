@@ -2,6 +2,8 @@ package org.breezeflow.algo.search;
 
 /**
  * 二分查找变形 ——查找第一个等于给定值的元素
+ *
+ * @author andy
  */
 public class BinarySearch01 {
 

@@ -12,6 +12,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Map;
 
 /**
+ * <p>{@link BeanFactory} 作为IoC容器
+ * <p>{@link org.springframework.context.ApplicationContext} 作为IoC容器
+ *
  * @author andy
  */
 @Configuration

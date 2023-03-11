@@ -3,8 +3,7 @@ package org.breezeflow.algo.prefix_sum;
 /**
  * 算法技巧(前缀和)训练案例:统计分数区间中学生的个数
  *
- * @author breezeflow
- * @date 2023/02/07
+ * @author andy
  */
 public class ScoreCount {
 
@@ -47,7 +46,7 @@ public class ScoreCount {
     }
 
     public static void main(String[] args) {
-        int[] score = new int[]{0,8,13,22,33,46,51,67,78,89,95,100};
+        int[] score = new int[]{0, 8, 13, 22, 33, 46, 51, 67, 78, 89, 95, 100};
         ScoreCount demo = new ScoreCount(score);
         System.out.println(demo.sumRange(1, 51));
     }

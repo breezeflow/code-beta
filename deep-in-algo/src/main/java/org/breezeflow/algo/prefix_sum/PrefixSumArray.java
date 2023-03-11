@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * 前缀和 数组
+ *
+ * @author andy
  */
 public class PrefixSumArray {
 

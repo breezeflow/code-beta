@@ -4,7 +4,7 @@ package org.breezeflow.algo.sort;
 /**
  * 希尔排序：对插入排序的改进，不稳定
  *
- * @author breezeflow
+ * @author andy
  */
 
 public class HillSort extends BaseSort {

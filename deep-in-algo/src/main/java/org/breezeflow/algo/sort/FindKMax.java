@@ -2,6 +2,8 @@ package org.breezeflow.algo.sort;
 
 /**
  * 利用快排的思想  超出数组中第K大元素
+ *
+ * @author andy
  */
 public class FindKMax {
 

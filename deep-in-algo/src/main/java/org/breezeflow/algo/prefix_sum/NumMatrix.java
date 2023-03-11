@@ -1,11 +1,9 @@
 package org.breezeflow.algo.prefix_sum;
 
 /**
- * 算法技巧(前缀和)训练案例:二维区域和检索 - 矩阵不可变
+ * 算法技巧(前缀和)训练案例:<a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">二维区域和检索 - 矩阵不可变</a>
  *
- * @author breezeflow
- * @link https://leetcode.cn/problems/range-sum-query-2d-immutable/
- * @date 2023/02/07
+ * @author andy
  */
 public class NumMatrix {
 
