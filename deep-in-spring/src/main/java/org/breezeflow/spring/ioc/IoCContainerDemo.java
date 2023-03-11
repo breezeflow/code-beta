@@ -1,6 +1,6 @@
 package org.breezeflow.spring.ioc;
 
-import org.breezeflow.spring.domain.User;
+import org.breezeflow.common.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;

@@ -1,4 +1,4 @@
-package org.breezeflow.spring.annotation;
+package org.breezeflow.common.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

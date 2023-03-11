@@ -1,7 +1,7 @@
-package org.breezeflow.spring.domain;
+package org.breezeflow.common.domain;
 
 import lombok.Data;
-import org.breezeflow.spring.annotation.Super;
+import org.breezeflow.common.annotation.Super;
 
 /**
  * @author andy

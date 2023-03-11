@@ -1,7 +1,7 @@
-package org.breezeflow.spring.dao;
+package org.breezeflow.common.dao;
 
 import lombok.Data;
-import org.breezeflow.spring.domain.User;
+import org.breezeflow.common.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.ApplicationContext;

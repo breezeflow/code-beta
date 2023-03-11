@@ -6,12 +6,12 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="user" class="org.breezeflow.spring.domain.User">
+    <bean id="user" class="org.breezeflow.common.domain.User">
         <property name="id" value="1"></property>
         <property name="name" value="chenh"></property>
     </bean>
     
-    <bean id="chinaUser" class="org.breezeflow.spring.domain.ChinaUser" parent="user" primary="true">
+    <bean id="chinaUser" class="org.breezeflow.common.domain.ChinaUser" parent="user" primary="true">
         <property name="food" value="chinaFood"/>
         <property name="culture" value="chinaCulture"/>
     </bean>

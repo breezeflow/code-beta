@@ -1,4 +1,4 @@
-package org.breezeflow.spring.domain;
+package org.breezeflow.common.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
