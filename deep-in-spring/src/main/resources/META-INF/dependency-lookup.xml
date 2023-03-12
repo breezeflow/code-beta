@@ -10,6 +10,8 @@
         <property name="id" value="1"></property>
         <property name="name" value="chenh"></property>
     </bean>
+
+    <alias name="user" alias="my_user" />
     
     <bean id="chinaUser" class="org.breezeflow.common.domain.ChinaUser" parent="user" primary="true">
         <property name="food" value="chinaFood"/>

@@ -16,4 +16,7 @@ public class User {
 
     private String name;
 
+    public static User createUser() {
+        return new User(6L, "static-method-user");
+    }
 }

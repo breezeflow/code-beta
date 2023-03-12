@@ -34,6 +34,15 @@ public class DependencyLookUpDemo {
         //延时查找
         lookUpInLazy(beanFactory);
 
+        // 别名查找
+        lookUpByAlias(beanFactory);
+
+    }
+
+    private static void lookUpByAlias(BeanFactory beanFactory) {
+        User user = (User) beanFactory.getBean("user");
+        User alias = (User) beanFactory.getBean("my_user");
+        System.out.println("alias == user ? " + (alias == user));
     }
 
     private static void lookUpByAnnotation(BeanFactory beanFactory) {
