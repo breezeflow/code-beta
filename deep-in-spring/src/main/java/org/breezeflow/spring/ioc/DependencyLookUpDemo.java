@@ -5,6 +5,9 @@ import org.breezeflow.common.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Map;
@@ -36,6 +39,9 @@ public class DependencyLookUpDemo {
 
         // 别名查找
         lookUpByAlias(beanFactory);
+
+        // 通过 ObjectProvider 查找
+        lookUpByObjectProvider();
 
     }
 
@@ -75,5 +81,21 @@ public class DependencyLookUpDemo {
         ObjectFactory<User> objectFactory = (ObjectFactory<User>) beanFactory.getBean("objectFactory");
         User user = objectFactory.getObject();
         System.out.println("延时查找" + user);
+    }
+
+    private static void lookUpByObjectProvider() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(DependencyLookUpDemo.class);
+        applicationContext.refresh();
+
+        ObjectProvider<String> objectProvider = applicationContext.getBeanProvider(String.class);
+        System.out.println(objectProvider.getObject());
+
+        applicationContext.close();
+    }
+
+    @Bean
+    public String helloWorld() { // 方法名就是 Bean 名称 "helloWorld"
+        return "hello,world";
     }
 }
