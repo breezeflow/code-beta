@@ -1,6 +1,5 @@
 package org.breezeflow.spring.bean;
 
-import org.breezeflow.common.factory.UserFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
