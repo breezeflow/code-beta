@@ -11,6 +11,7 @@
     <modules>
         <module>deep-in-spring</module>
         <module>deep-in-algo</module>
+        <module>base-tech</module>
     </modules>
 
     <properties>
