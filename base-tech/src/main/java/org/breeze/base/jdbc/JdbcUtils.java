@@ -40,7 +40,7 @@ public class JdbcUtils {
             connection.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
 
             // 3. 创建Statement，即SQL
-            String sql = "select * from test.test where `name` = ? and `age` = ? ";
+            String sql = "select * from test.user where `name` = ? and `age` = ? ";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setObject(1, "zhang");
             preparedStatement.setObject(2, 18);
