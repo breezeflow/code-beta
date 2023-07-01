@@ -25,13 +25,16 @@ public class MybatisDemo {
     public static void main(String[] args) throws IOException {
         // 构建 SqlSessionFactory
         SqlSessionFactory sqlSessionFactory = buildFromXMLConfig();
+        try {
+            // 创建 SqlSession 执行 SQL
+            SqlSession session = sqlSessionFactory.openSession();
 
-        // 创建 SqlSession 执行 SQL
-        try (SqlSession session = sqlSessionFactory.openSession()) {
             // 获取 Mapper 代理对象
             UserMapper mapper = session.getMapper(UserMapper.class);
             User user = mapper.select(2);
             System.out.println(user);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
