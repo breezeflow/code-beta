@@ -1,7 +1,7 @@
 package org.breeze.mybatis.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Param;
 import org.breeze.mybatis.domain.User;
 
 /**
@@ -11,7 +11,8 @@ import org.breeze.mybatis.domain.User;
 @Mapper
 public interface UserMapper {
 
-    @Select("SELECT * FROM test.user WHERE id = #{id}")
-    User select(int id);
+    User selectById(@Param("id") int id);
+
+    int updateById(@Param("user") User user);
 
 }

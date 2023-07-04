@@ -3,7 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.breeze.mybatis.mapper.UserMapper">
-    <select id="selectUser" resultType="org.breeze.mybatis.domain.User">
-        select * from Blog where id = #{id}
+
+        <cache />
+<!--         也可以引用其他 namespace 的 缓存设置，标识两个 namespace 公用一个缓存空间 -->
+<!--        <cache-ref namespace="org.breeze.mybatis.mapper.UserMapper"/>-->
+
+    <select id="selectById" resultType="org.breeze.mybatis.domain.User">
+        select * from user where id = #{id}
     </select>
+
+    <update id="updateById" parameterType="org.breeze.mybatis.domain.User">
+        update user set name = #{user.name} where id = #{user.id}
+    </update>
 </mapper>
