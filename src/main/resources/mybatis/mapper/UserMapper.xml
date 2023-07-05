@@ -4,9 +4,9 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.breeze.mybatis.mapper.UserMapper">
 
-        <cache />
-<!--         也可以引用其他 namespace 的 缓存设置，标识两个 namespace 公用一个缓存空间 -->
-<!--        <cache-ref namespace="org.breeze.mybatis.mapper.UserMapper"/>-->
+    <cache/>
+    <!--         也可以引用其他 namespace 的 缓存设置，标识两个 namespace 公用一个缓存空间 -->
+    <!--        <cache-ref namespace="org.breeze.mybatis.mapper.UserMapper"/>-->
 
     <select id="selectById" resultType="org.breeze.mybatis.domain.User">
         select * from user where id = #{id}
@@ -14,5 +14,26 @@
 
     <update id="updateById" parameterType="org.breeze.mybatis.domain.User">
         update user set name = #{user.name} where id = #{user.id}
+    </update>
+    <update id="updateByMap">
+        update user
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="name = case" suffix="end,">
+                <foreach collection="map" item="value" index="key">
+                    <if test="key != null">
+                        when id = #{key} then #{value}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where
+        <foreach collection="map" separator="or" item="value" index="key">
+            id = #{key}
+        </foreach>
+    </update>
+    <update id="updateByMap2">
+        <foreach collection="map" item="value" index="key" open="" close="" separator=";">
+            update user set name = #{value} where id = #{key}
+        </foreach>
     </update>
 </mapper>

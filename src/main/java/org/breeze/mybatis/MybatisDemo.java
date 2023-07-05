@@ -16,6 +16,8 @@ import org.breeze.mybatis.mapper.UserMapper;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author andy
@@ -32,8 +34,23 @@ public class MybatisDemo {
 //        testLocalCacheScope();
 
         // 测试二级缓存
-        testLevel2Cache();
+//        testLevel2Cache();
 
+        testBatchUpdateMap();
+    }
+
+    private static void testBatchUpdateMap() throws IOException {
+        // 构建 SqlSessionFactory
+        SqlSessionFactory sqlSessionFactory = buildFromXMLConfig();
+        SqlSession session = sqlSessionFactory.openSession(true);
+
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "liu1");
+        map.put(2, "guan2");
+//        int i = mapper.updateByMap(map);
+        int i = mapper.updateByMap2(map);
+        System.out.println(i);
     }
 
     public static void testLevel2Cache() throws IOException {

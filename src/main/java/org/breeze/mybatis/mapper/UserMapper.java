@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.breeze.mybatis.domain.User;
 
+import java.util.Map;
+
 /**
  * @author andy
  * @version 2023/06/30
@@ -14,5 +16,9 @@ public interface UserMapper {
     User selectById(@Param("id") int id);
 
     int updateById(@Param("user") User user);
+
+    int updateByMap(@Param("map") Map<Integer, String> map);
+
+    int updateByMap2(@Param("map") Map<Integer, String> map);
 
 }
