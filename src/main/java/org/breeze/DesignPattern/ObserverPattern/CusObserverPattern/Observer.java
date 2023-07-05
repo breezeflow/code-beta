@@ -6,7 +6,7 @@ package org.breeze.DesignPattern.ObserverPattern.CusObserverPattern;
 public interface Observer {
 
     /**
-     * 观察者获取到通知后的 作业
+     * 观察者获取到通知后的 后续处理行为
      *
      * @param context
      */
