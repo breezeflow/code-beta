@@ -3,7 +3,7 @@ package org.breeze.spring.listener;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * @author chenh/S26377
+ * @author andy
  * @version 2023/07/05
  */
 public class BizEvent extends ApplicationEvent {

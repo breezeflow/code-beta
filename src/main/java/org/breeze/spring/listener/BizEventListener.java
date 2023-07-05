@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author chenh/S26377
+ * @author andy
  * @version 2023/07/05
  */
 @Component
