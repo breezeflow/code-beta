@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author andy
- * @version 2023/07/05
+ * @version 1.0.0
  */
 @Component
 public class BizEventListener implements ApplicationListener<BizEvent> {

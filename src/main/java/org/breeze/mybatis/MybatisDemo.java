@@ -21,7 +21,7 @@ import java.util.Map;
 
 /**
  * @author andy
- * @version 2023/06/30
+ * @version 1.0.0
  */
 public class MybatisDemo {
 

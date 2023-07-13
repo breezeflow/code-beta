@@ -2,7 +2,7 @@ package org.breeze.base;
 
 /**
  * @author andy
- * @version 2023/03/28
+ * @version 1.0.0
  */
 public class StringExample {
     public static void main(String[] args) {

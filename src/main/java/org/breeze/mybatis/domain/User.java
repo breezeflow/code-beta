@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * @author andy
- * @version 2023/06/30
+ * @version 1.0.0
  */
 @Data
 @NoArgsConstructor

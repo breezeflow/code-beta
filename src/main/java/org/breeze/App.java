@@ -2,7 +2,7 @@ package org.breeze;
 
 /**
  * @author andy
- * @version 2023/07/05
+ * @version 1.0.0
  */
 public class App {
 }
