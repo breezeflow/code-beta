@@ -1,19 +1,16 @@
 package org.breeze.util;
 
-import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
 import java.util.Stack;
 
 /**
- *
  * <p>思路1：
  * <ol>
  * <li>采用双栈法实现表达式求值，一个栈用来存储数字，一个栈用来存储运算符。
@@ -52,7 +49,6 @@ import java.util.Stack;
  * <li>返回整个表达式的值。
  * </ol>
  *
- *
  * @author andy
  * @version 1.0.0
  */
@@ -62,7 +58,7 @@ public class Calculator {
     public static Stack<BigDecimal> number = new Stack<>();
 
     // 操作符栈
-    public static Stack<Character> operate = new Stack<>();
+    public static Stack<String> operate = new Stack<>();
 
     // 支持的操作符
     public static Map<String, Integer> supportOpt = new HashMap<String, Integer>() {{
@@ -72,86 +68,90 @@ public class Calculator {
         put("/", 2);
     }};
 
-    public static Set<Character> supportNum = new HashSet<>(Arrays.asList('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'));
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
-        while (!StringUtils.isEmpty(str)) {
-            traversalStr(str);
-            cal();
-            System.out.println("结果：" + number.peek());
+        List<String> strList = processInput(str);
+        System.out.println("表达式：" + str);
+        while (str.length() > 0 && strList.size() > 0) {
+            BigDecimal result = traversalStr(strList);
+            System.out.println("结果：" + result.toPlainString());
             str = scanner.nextLine();
+            strList = processInput(str);
         }
     }
 
-    private static void analyzeStr() {
-
+    private static List<String> processInput(String str) {
+        // 去除字符串中多余的空白字符，包括空格、制表符、换页符等
+        str = str.trim().replaceAll("\\s+", "");
+        // 正则表达式：匹配任意一个 +、-、* 或 /，并将其保留为一个单独的项
+        String regex = "(?<=[+\\-*/])|(?=[+\\-*/])";
+        List<String> strList = Arrays.asList(str.split(regex));
+        return strList;
     }
 
-    private static void traversalStr(String str) {
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
-            if (c == ' ') continue;
-            // 如果是数字：
-            if (supportNum.contains(c)) {
-                number.push(BigDecimal.valueOf(Character.getNumericValue(c)));
-            }
-            // 如果是左括号
-            if ('(' == c) {
-                operate.push(c);
-            }
+    private static BigDecimal traversalStr(List<String> str) {
 
-            // 如果是右括号：弹出栈顶运算符，并弹出两个数字进行计算，结果加入数字栈，知道碰到左括号
-            if (')' == c) {
-                while (operate.peek() == '(') {
+        for (String c : str) {
+            if (c.matches("^\\d+$")) {
+                // 如果是正数
+                number.push(BigDecimal.valueOf(Long.parseLong(c)));
+            } else if (c.matches("\\d+(\\.\\d+)?")) {
+                // 如果是小数
+                number.push(BigDecimal.valueOf(Double.parseDouble(c)));
+            } else if ("(".equalsIgnoreCase(c)) {
+                // 如果是左括号
+                operate.push(c);
+            } else if (")".equalsIgnoreCase(c)) {
+                // 如果是右括号：弹出栈顶运算符，并弹出两个数字进行计算，结果加入数字栈，知道碰到左括号
+                while ("(".equalsIgnoreCase(operate.peek())) {
                     calCurrent();
                 }
-            }
-
-            // 如果是运算符
-            if (supportOpt.containsKey(String.valueOf(c))) {
-                // 判断当前运算符与运算符栈顶运算符的优先级，
+            } else if (supportOpt.containsKey(c)) {
+                // 如果是运算符
+                // 判断当前运算符与运算符栈顶运算符的优先级
                 while (!operate.isEmpty() &&
-                        supportOpt.get(String.valueOf(c)).compareTo(supportOpt.get(String.valueOf(operate.peek()))) <= 0) {
+                        supportOpt.get(c).compareTo(supportOpt.get(operate.peek())) <= 0) {
                     // 如果小于或者等于：弹出栈顶运算符，并弹出两个数字进行计算，结果加入数字栈
                     calCurrent();
                 }
-                // 如果大或者栈顶运算符为空；加入运算符栈
+                // 直到当前运算符优先级大于当前栈顶运算符 或者 栈顶运算符为空，则将当前运算符加入运算符栈
                 operate.push(c);
+            } else {
+                throw new RuntimeException("字符" + c + "不是合法的");
             }
         }
+
+        while (!operate.isEmpty()) {
+            calCurrent();
+        }
+
+        return number.pop();
     }
 
     /**
      * 弹出栈顶运算符，并弹出两个数字进行计算，结果加入数字栈
      */
     private static void calCurrent() {
-        Character topOpt = operate.pop();
+        String topOpt = operate.pop();
         BigDecimal num1 = number.pop();
         BigDecimal num2 = number.pop();
         BigDecimal result = new BigDecimal(0);
         switch (topOpt) {
-            case '+':
+            case "+":
                 result = num2.add(num1);
                 break;
-            case '-':
+            case "-":
                 result = num2.subtract(num1);
                 break;
-            case '*':
+            case "*":
                 result = num2.multiply(num1);
                 break;
-            case '/':
+            case "/":
                 result = num2.divide(num1, 4, RoundingMode.HALF_UP);
                 break;
         }
         number.push(result);
-    }
-
-    private static void cal() {
-        while (!operate.isEmpty()) {
-            calCurrent();
-        }
     }
 
 }
