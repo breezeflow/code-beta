@@ -72,7 +72,6 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
         List<String> strList = processInput(str);
-        System.out.println("表达式：" + str);
         while (str.length() > 0 && strList.size() > 0) {
             BigDecimal result = traversalStr(strList);
             System.out.println("结果：" + result.toPlainString());
@@ -84,20 +83,26 @@ public class Calculator {
     private static List<String> processInput(String str) {
         // 去除字符串中多余的空白字符，包括空格、制表符、换页符等
         str = str.trim().replaceAll("\\s+", "");
+        System.out.println("表达式：" + str);
         // 正则表达式：匹配任意一个 +、-、* 或 /，并将其保留为一个单独的项
         String regex = "(?<=[+\\-*/])|(?=[+\\-*/])";
         List<String> strList = Arrays.asList(str.split(regex));
         return strList;
     }
 
+    /**
+     * 表达式求值
+     * @param str 原始表达式根据操作符分割之后的结果集
+     * @return 结果
+     */
     private static BigDecimal traversalStr(List<String> str) {
 
         for (String c : str) {
             if (c.matches("^\\d+$")) {
-                // 如果是正数 todo 缺少超过阈值校验
+                // 如果是正数
                 number.push(BigDecimal.valueOf(Long.parseLong(c)));
             } else if (c.matches("\\d+(\\.\\d+)?")) {
-                // 如果是小数 todo 缺少超过阈值校验
+                // 如果是小数
                 number.push(BigDecimal.valueOf(Double.parseDouble(c)));
             } else if ("(".equalsIgnoreCase(c)) {
                 // 如果是左括号
