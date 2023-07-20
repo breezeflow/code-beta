@@ -94,10 +94,10 @@ public class Calculator {
 
         for (String c : str) {
             if (c.matches("^\\d+$")) {
-                // 如果是正数
+                // 如果是正数 todo 缺少超过阈值校验
                 number.push(BigDecimal.valueOf(Long.parseLong(c)));
             } else if (c.matches("\\d+(\\.\\d+)?")) {
-                // 如果是小数
+                // 如果是小数 todo 缺少超过阈值校验
                 number.push(BigDecimal.valueOf(Double.parseDouble(c)));
             } else if ("(".equalsIgnoreCase(c)) {
                 // 如果是左括号
