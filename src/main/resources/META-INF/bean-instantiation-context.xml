@@ -20,4 +20,7 @@
         <property name="serviceType" value="org.breeze.common.factory.UserFactory"/>
     </bean>
 
+
+    <bean id="userDao" class="org.breeze.spring.bean.UserFactoryBean"/>
+
 </beans>

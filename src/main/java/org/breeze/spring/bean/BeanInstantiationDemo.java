@@ -19,7 +19,7 @@ public class BeanInstantiationDemo {
 
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("src/main/resources/META-INF/bean-instantiation-context.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/META-INF/bean-instantiation-context.xml");
 
         User user = applicationContext.getBean("user-by-static-method", User.class);
         User bean = applicationContext.getBean("user-by-instance-method", User.class);

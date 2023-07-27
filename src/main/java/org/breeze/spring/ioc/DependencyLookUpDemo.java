@@ -20,7 +20,7 @@ import java.util.Map;
 public class DependencyLookUpDemo {
 
     public static void main(String[] args) {
-        BeanFactory beanFactory = new ClassPathXmlApplicationContext("src/main/resources/META-INF/dependency-lookup.xml");
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-lookup.xml");
 
         //通过注解查找
         lookUpByAnnotation(beanFactory);
