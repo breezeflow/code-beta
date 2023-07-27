@@ -1,6 +1,6 @@
 package org.breeze.spring.bean;
 
-import org.breeze.common.domain.User;
+import org.breeze.spring.common.domain.User;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;

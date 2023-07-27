@@ -1,7 +1,7 @@
 package org.breeze.spring.ioc;
 
-import org.breeze.common.annotation.Super;
-import org.breeze.common.domain.User;
+import org.breeze.spring.common.annotation.Super;
+import org.breeze.spring.common.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;

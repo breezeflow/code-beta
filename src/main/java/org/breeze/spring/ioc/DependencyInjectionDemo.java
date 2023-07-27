@@ -1,7 +1,7 @@
 package org.breeze.spring.ioc;
 
-import org.breeze.common.dao.UserDao;
-import org.breeze.common.domain.User;
+import org.breeze.spring.common.dao.UserDao;
+import org.breeze.spring.common.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

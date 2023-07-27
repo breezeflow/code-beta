@@ -1,8 +1,8 @@
 package org.breeze.spring.bean;
 
-import org.breeze.common.domain.User;
-import org.breeze.common.factory.DefaultUserFactory;
-import org.breeze.common.factory.UserFactory;
+import org.breeze.spring.common.domain.User;
+import org.breeze.spring.common.factory.DefaultUserFactory;
+import org.breeze.spring.common.factory.UserFactory;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

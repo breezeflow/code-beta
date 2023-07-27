@@ -1,6 +1,6 @@
 package org.breeze.spring.bean;
 
-import org.breeze.common.domain.User;
+import org.breeze.spring.common.domain.User;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;

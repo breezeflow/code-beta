@@ -8,7 +8,7 @@
 
     <import resource="dependency-lookup.xml"/>
 
-    <bean id="userDao" class="org.breeze.common.dao.UserDao" autowire="byType">
+    <bean id="userDao" class="org.breeze.spring.common.dao.UserDao" autowire="byType">
         <!-- 手动配置 -->
 <!--        <property name="users">-->
 <!--            <util:list>-->

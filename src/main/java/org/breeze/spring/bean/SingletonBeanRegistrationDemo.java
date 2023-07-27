@@ -1,7 +1,7 @@
 package org.breeze.spring.bean;
 
-import org.breeze.common.factory.DefaultUserFactory;
-import org.breeze.common.factory.UserFactory;
+import org.breeze.spring.common.factory.DefaultUserFactory;
+import org.breeze.spring.common.factory.UserFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

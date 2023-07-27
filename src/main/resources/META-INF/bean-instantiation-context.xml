@@ -4,20 +4,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 静态方法实例化 Bean -->
-    <bean id="user-by-static-method" class="org.breeze.common.domain.User"
+    <bean id="user-by-static-method" class="org.breeze.spring.common.domain.User"
           factory-method="createUser"/>
 
     <!-- 实例（Bean）方法实例化 Bean -->
     <bean id="user-by-instance-method" factory-bean="userFactory" factory-method="createUser"/>
 
-    <bean id="userFactory" class="org.breeze.common.factory.DefaultUserFactory"/>
+    <bean id="userFactory" class="org.breeze.spring.common.factory.DefaultUserFactory"/>
 
     <!-- FactoryBean实例化 Bean -->
-    <bean id="user-by-factory-bean" class="org.breeze.common.factory.UserFactoryBean"/>
+    <bean id="user-by-factory-bean" class="org.breeze.spring.common.factory.UserFactoryBean"/>
 
 
     <bean id="userFactoryServiceLoader" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
-        <property name="serviceType" value="org.breeze.common.factory.UserFactory"/>
+        <property name="serviceType" value="org.breeze.spring.common.factory.UserFactory"/>
     </bean>
 
 
