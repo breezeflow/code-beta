@@ -1,4 +1,4 @@
-package org.breeze.design.proxy.CglibProxyExample;
+package org.breeze.design.proxy.cglib;
 
 
 import org.springframework.cglib.proxy.Enhancer;
