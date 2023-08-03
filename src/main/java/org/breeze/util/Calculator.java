@@ -3,12 +3,15 @@ package org.breeze.util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <p>思路1：
@@ -85,13 +88,27 @@ public class Calculator {
         str = str.trim().replaceAll("\\s+", "");
         System.out.println("表达式：" + str);
         // 正则表达式：匹配任意一个 +、-、* 或 /，并将其保留为一个单独的项
-        String regex = "(?<=[+\\-*/])|(?=[+\\-*/])";
-        List<String> strList = Arrays.asList(str.split(regex));
-        return strList;
+        String regex = "(?<=[+\\-*/()])|(?=[+\\-*/()])";
+        return Arrays.asList(str.split(regex));
+    }
+
+    private static List<String> splitStringWithOperators(String inputString) {
+        List<String> separatedItems = new ArrayList<>();
+
+        String regex = "([-+*/()])";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(inputString);
+
+        while (matcher.find()) {
+            String item = matcher.group().trim();
+            separatedItems.add(item);
+        }
+        return separatedItems;
     }
 
     /**
      * 表达式求值
+     *
      * @param str 原始表达式根据操作符分割之后的结果集
      * @return 结果
      */
@@ -109,13 +126,14 @@ public class Calculator {
                 operate.push(c);
             } else if (")".equalsIgnoreCase(c)) {
                 // 如果是右括号：弹出栈顶运算符，并弹出两个数字进行计算，结果加入数字栈，知道碰到左括号
-                while ("(".equalsIgnoreCase(operate.peek())) {
+                while (!"(".equalsIgnoreCase(operate.peek())) {
                     calCurrent();
                 }
+                operate.pop();
             } else if (supportOpt.containsKey(c)) {
                 // 如果是运算符
                 // 判断当前运算符与运算符栈顶运算符的优先级
-                while (!operate.isEmpty() &&
+                while (!operate.isEmpty() && supportOpt.get(operate.peek()) != null &&
                         supportOpt.get(c).compareTo(supportOpt.get(operate.peek())) <= 0) {
                     // 如果小于或者等于：弹出栈顶运算符，并弹出两个数字进行计算，结果加入数字栈
                     calCurrent();
@@ -155,6 +173,8 @@ public class Calculator {
             case "/":
                 result = num2.divide(num1, 4, RoundingMode.HALF_UP);
                 break;
+            default:
+                return;
         }
         number.push(result);
     }
