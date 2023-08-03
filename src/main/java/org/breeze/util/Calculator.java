@@ -3,15 +3,12 @@ package org.breeze.util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * <p>思路1：
@@ -92,20 +89,6 @@ public class Calculator {
         return Arrays.asList(str.split(regex));
     }
 
-    private static List<String> splitStringWithOperators(String inputString) {
-        List<String> separatedItems = new ArrayList<>();
-
-        String regex = "([-+*/()])";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(inputString);
-
-        while (matcher.find()) {
-            String item = matcher.group().trim();
-            separatedItems.add(item);
-        }
-        return separatedItems;
-    }
-
     /**
      * 表达式求值
      *
@@ -159,24 +142,22 @@ public class Calculator {
         String topOpt = operate.pop();
         BigDecimal num1 = number.pop();
         BigDecimal num2 = number.pop();
-        BigDecimal result = new BigDecimal(0);
         switch (topOpt) {
             case "+":
-                result = num2.add(num1);
+                number.push(num2.add(num1));
                 break;
             case "-":
-                result = num2.subtract(num1);
+                number.push(num2.subtract(num1));
                 break;
             case "*":
-                result = num2.multiply(num1);
+                number.push(num2.multiply(num1));
                 break;
             case "/":
-                result = num2.divide(num1, 4, RoundingMode.HALF_UP);
+                number.push(num2.divide(num1, 4, RoundingMode.HALF_UP));
                 break;
             default:
                 return;
         }
-        number.push(result);
     }
 
 }
