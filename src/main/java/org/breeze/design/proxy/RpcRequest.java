@@ -3,8 +3,8 @@ package org.breeze.design.proxy;
 /**
  * 需要被代理的类
  *
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class RpcRequest implements IRequest {
 

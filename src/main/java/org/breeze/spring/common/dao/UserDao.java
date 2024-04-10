@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import java.util.Collection;
 
 /**
- * @author andy
+ * 
  */
 @Data
 public class UserDao {

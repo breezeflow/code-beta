@@ -3,7 +3,7 @@ package org.breeze.algo.prefix_sum;
 /**
  * 算法技巧(前缀和)训练案例: <a href="https://leetcode.cn/problems/range-sum-query-immutable/">区域和检索 - 数组不可变</a>}
  *
- * @author andy
+ * 
  */
 public class NumArray {
 

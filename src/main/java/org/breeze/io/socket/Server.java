@@ -5,8 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class Server {
 

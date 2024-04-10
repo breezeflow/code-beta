@@ -3,8 +3,8 @@ package org.breeze.design.proxy;
 import org.breeze.design.proxy.jdk.RequestProxyFactory;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class TestProxy {
 

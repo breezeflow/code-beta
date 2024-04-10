@@ -13,7 +13,7 @@ package org.breeze.algo.sort;
  * 然后再重复上述判断、取数据操作。
  * 如果有一个数组遍历结束，就将另一个数组剩余的数据拷贝到临时数组。
  *
- * @author andy
+ * 
  */
 
 public class MergeSort extends BaseSort {

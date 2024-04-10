@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Lazy;
 /**
  * Bean 初始化
  *
- * @author andy
+ * 
  */
 public class BeanInitializationDemo {
 

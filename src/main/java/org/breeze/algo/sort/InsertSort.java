@@ -3,7 +3,7 @@ package org.breeze.algo.sort;
 /**
  * 插入排序 时间复杂度：O(n^2) 适合小规模数据的排序
  *
- * @author andy
+ * 
  */
 
 public class InsertSort extends BaseSort {

@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class Client {
 

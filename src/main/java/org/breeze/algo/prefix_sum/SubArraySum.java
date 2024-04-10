@@ -3,7 +3,7 @@ package org.breeze.algo.prefix_sum;
 /**
  * 算法技巧(前缀和)训练案例:<a href="https://leetcode.cn/problems/subarray-sum-equals-k/">和为 K 的子数组</a>
  *
- * @author andy
+ * 
  */
 public class SubArraySum {
 

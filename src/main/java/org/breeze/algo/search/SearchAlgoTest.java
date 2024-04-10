@@ -1,7 +1,7 @@
 package org.breeze.algo.search;
 
 /**
- * @author andy
+ * 
  * 
  */
 public class SearchAlgoTest {

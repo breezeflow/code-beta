@@ -13,7 +13,7 @@ import java.util.ServiceLoader;
 /**
  * Bean 实例化
  *
- * @author andy
+ * 
  */
 public class BeanInstantiationDemo {
 

@@ -3,7 +3,7 @@ package org.breeze.concurrency.ThreadPool;
 import java.util.concurrent.locks.LockSupport;
 
 /**
- * @author andy
+ * 
  */
 public class ThreadStatusDemo {
 

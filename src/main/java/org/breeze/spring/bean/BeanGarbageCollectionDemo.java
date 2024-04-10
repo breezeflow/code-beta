@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /**
  * Bean 垃圾回收（GC）示例
  *
- * @author andy
+ * 
  */
 public class BeanGarbageCollectionDemo {
 

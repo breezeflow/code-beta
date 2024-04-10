@@ -3,9 +3,7 @@ package org.breeze.concurrency.AQS;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- *
- */
+
 public class CountDownLatchExample2 {
 
     public static void main(String[] args) {

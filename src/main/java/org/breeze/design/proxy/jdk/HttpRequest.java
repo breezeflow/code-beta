@@ -3,8 +3,8 @@ package org.breeze.design.proxy.jdk;
 import org.breeze.design.proxy.IRequest;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class HttpRequest implements IRequest {
     @Override

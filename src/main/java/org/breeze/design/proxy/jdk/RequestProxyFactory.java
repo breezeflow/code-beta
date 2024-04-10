@@ -3,8 +3,8 @@ package org.breeze.design.proxy.jdk;
 import java.lang.reflect.Proxy;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class RequestProxyFactory<T> {
 

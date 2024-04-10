@@ -20,8 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class MybatisDemo {
 

@@ -10,7 +10,7 @@ package org.breeze.algo.sort;
  * <p>根据分治、递归的处理思想，我们可以用递归排序下标从 p 到 q-1 之间的数据和下标从
  * q+1 到 r 之间的数据，直到区间缩小为 1，就说明所有的数据都有序了
  *
- * @author andy
+ * 
  */
 public class QuickSort extends BaseSort {
 

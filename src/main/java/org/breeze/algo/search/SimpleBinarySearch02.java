@@ -3,7 +3,7 @@ package org.breeze.algo.search;
 /**
  * 简单的二分查找：无重复值，递归实现
  *
- * @author andy
+ * 
  */
 public class SimpleBinarySearch02 {
 

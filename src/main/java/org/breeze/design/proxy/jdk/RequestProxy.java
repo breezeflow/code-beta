@@ -4,8 +4,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class RequestProxy<T> implements InvocationHandler {
 

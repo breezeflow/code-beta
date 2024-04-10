@@ -6,7 +6,7 @@ import org.springframework.beans.factory.FactoryBean;
 /**
  * {@link org.breeze.spring.common.domain.User} Bean 的 {@link org.springframework.beans.factory.FactoryBean} 实现
  *
- * @author andy
+ * 
  */
 public class UserFactoryBean implements FactoryBean<User> {
     @Override

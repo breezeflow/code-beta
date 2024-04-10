@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 /**
- * @author andy
+ * 
  */
 public class DefaultUserFactory implements UserFactory, InitializingBean,DisposableBean{
 

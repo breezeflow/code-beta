@@ -17,8 +17,8 @@ import java.lang.reflect.Proxy;
 /**
  * 注册一个自定义的 Bean 到 Spring
  *
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class CustomerBeanRegisterDemo {
 

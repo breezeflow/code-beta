@@ -15,7 +15,6 @@ import java.util.Map;
 /**
  * 注册 BeanDefinition 示例
  *
- * @author andy
  */
 @Import(AnnotationBeanDefinitionDemo.Config.class)
 public class AnnotationBeanDefinitionDemo {

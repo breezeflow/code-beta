@@ -7,8 +7,8 @@ import org.breeze.mybatis.domain.User;
 import java.util.Map;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 @Mapper
 public interface UserMapper {

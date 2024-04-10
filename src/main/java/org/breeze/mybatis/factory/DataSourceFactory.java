@@ -5,8 +5,8 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 import javax.sql.DataSource;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class DataSourceFactory {
 

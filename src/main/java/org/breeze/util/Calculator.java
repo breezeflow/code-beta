@@ -49,8 +49,8 @@ import java.util.Stack;
  * <li>返回整个表达式的值。
  * </ol>
  *
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class Calculator {
 

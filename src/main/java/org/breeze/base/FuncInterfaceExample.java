@@ -8,8 +8,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
- * @author andy
- * @version 1.0.0
+ * 
+ * 
  */
 public class FuncInterfaceExample {
 
