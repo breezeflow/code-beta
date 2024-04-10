@@ -8,13 +8,19 @@ import java.util.regex.Pattern;
 
 public class RegMatch {
 
-    // 车牌校验正则表达式
+    // 车牌校验
     public final static String CAR_LICENSE_PATTERN = "^(([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-Z](([0-9]{5}[DF])|([DF]([A-HJ-NP-Z0-9])[0-9]{4})))|([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳使领]))$";
 
-
+    // pivot值校验
     public final static String PIVOT_CHECK_V2 = "^.+=((\\d+)|(\\d*\\.\\d{1,3}))$";
 
-    public static boolean validCarLicense(String str) {
+    /**
+     * 校验中国车牌
+     *
+     * @param str
+     * @return
+     */
+    public static boolean matchCarNo(String str) {
         if (StringUtils.isEmpty(str)) {
             return false;
         }
@@ -24,7 +30,13 @@ public class RegMatch {
         return matcher.find();
     }
 
-    public static boolean match(String str) {
+    /**
+     * 校验Pivot值：任意字符=任意整数/小数点后最长3位的小数
+     *
+     * @param str
+     * @return
+     */
+    public static boolean matchPivotValue(String str) {
         if (StringUtils.isEmpty(str)) {
             return false;
         }
@@ -33,19 +45,9 @@ public class RegMatch {
         return matcher.matches();
     }
 
-    public static void testCar() {
-//        Arrays.asList("川A123AB", "川A2222学", "川AF12345", "川A12345D",
-//                "川A123456", "川A2222i", "川AA12345", "川AD123456").forEach(e -> {
-//            if (validCarLicense(e)) {
-//                System.out.println(e);
-//            }
-//        });
-        System.out.println(validCarLicense("粤B12345"));
-    }
-
     public static void main(String[] args) {
-//        testCar();
-        System.out.println(match("TEST051750623=2500.111"));
+        System.out.println(matchCarNo("粤B123456"));
+        System.out.println(matchPivotValue("TEST051750623=2500.111"));
     }
 
 }
