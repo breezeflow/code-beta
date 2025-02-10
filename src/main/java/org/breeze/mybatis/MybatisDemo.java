@@ -19,10 +19,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 
- * 
- */
+
 public class MybatisDemo {
 
     public static void main(String[] args) throws IOException {
@@ -42,15 +39,15 @@ public class MybatisDemo {
     private static void testBatchUpdateMap() throws IOException {
         // 构建 SqlSessionFactory
         SqlSessionFactory sqlSessionFactory = buildFromXMLConfig();
-        SqlSession session = sqlSessionFactory.openSession(true);
-
-        UserMapper mapper = session.getMapper(UserMapper.class);
-        Map<Integer, String> map = new HashMap<>();
-        map.put(1, "liu1");
-        map.put(2, "guan2");
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            UserMapper mapper = session.getMapper(UserMapper.class);
+            Map<Integer, String> map = new HashMap<>();
+            map.put(1, "liu1");
+            map.put(2, "guan2");
 //        int i = mapper.updateByMap(map);
-        int i = mapper.updateByMap2(map);
-        System.out.println(i);
+            int i = mapper.updateByMap2(map);
+            System.out.println(i);
+        }
     }
 
     public static void testLevel2Cache() throws IOException {
@@ -72,15 +69,15 @@ public class MybatisDemo {
         System.out.println("userMapper2读取数据: " + userMapper2.selectById(1));
         System.out.println("userMapper1读取数据: " + userMapper1.selectById(1));
 
+        session1.close();
+        session2.close();
     }
 
     public static void localCacheDemo() throws IOException {
         // 构建 SqlSessionFactory
         SqlSessionFactory sqlSessionFactory = buildFromXMLConfig();
-        try {
-            // 创建 SqlSession 执行 SQL
-            SqlSession session = sqlSessionFactory.openSession(true);
-
+        // try-with-resources 语句
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
             // 获取 Mapper 代理对象
             UserMapper mapper = session.getMapper(UserMapper.class);
             User user1 = mapper.selectById(1);
@@ -91,9 +88,6 @@ public class MybatisDemo {
 
             User user2 = mapper.selectById(1);
             System.out.println(user2);
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -122,13 +116,13 @@ public class MybatisDemo {
         // session2 读取到的是 更新之后的数据，所以证明 mybatis 一级缓存的作用域为session级，且多个session时，容易出现脏数据
         System.out.println("userMapper2读取数据: " + userMapper2.selectById(1));
 
+        session1.close();
+        session2.close();
+
     }
 
     /**
      * 通过 XML 配置文件获取 SqlSessionFactory
-     *
-     * @return
-     * @throws IOException
      */
     public static SqlSessionFactory buildFromXMLConfig() throws IOException {
         String resource = "mybatis/mybatis-config.xml";
@@ -138,11 +132,8 @@ public class MybatisDemo {
 
     /**
      * 通过 Java 配置类获取 SqlSessionFactory
-     *
-     * @return
-     * @throws IOException
      */
-    public static SqlSessionFactory buildFromNonXMLConfig() throws IOException {
+    public static SqlSessionFactory buildFromNonXMLConfig() {
         DataSource dataSource = DataSourceFactory.getMysqlDataSource();
         TransactionFactory transactionFactory = new JdbcTransactionFactory();
         Environment environment = new Environment("development", transactionFactory, dataSource);
@@ -150,6 +141,5 @@ public class MybatisDemo {
         configuration.addMapper(UserMapper.class);
         return new SqlSessionFactoryBuilder().build(configuration);
     }
-
 
 }
