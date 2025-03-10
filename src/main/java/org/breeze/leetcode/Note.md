@@ -10,3 +10,5 @@
 - [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/description/) 标记法
 - [160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/) 双指针+标记法
 - [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/)
+- [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/)
+- [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/description/)
