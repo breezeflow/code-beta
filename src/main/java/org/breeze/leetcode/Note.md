@@ -12,3 +12,4 @@
 - [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/)
 - [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/)
 - [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/description/)
+- [86. 分隔链表](https://leetcode.cn/problems/partition-list/description/)
