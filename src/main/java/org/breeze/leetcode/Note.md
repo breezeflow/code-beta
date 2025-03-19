@@ -12,3 +12,4 @@
 - [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/description/)
 - [86. 分隔链表](https://leetcode.cn/problems/partition-list/description/)
 - [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/description/)
+- [链表中倒数第k个节点(140. 训练计划 II)](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/description/)
