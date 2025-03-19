@@ -1,4 +1,4 @@
-package org.breeze.leetcode.two_pointer;
+package org.breeze.leetcode.two_pointer_list;
 
 import org.breeze.leetcode.ListNode;
 

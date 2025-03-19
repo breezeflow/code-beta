@@ -2,7 +2,7 @@
 > 多动脑，要细心
 > 练套路，为面试
 
-# 双指针
+# 双指针-链表问题
 
 - [141. 环形链表](https://leetcode.cn/problems/linked-list-cycle/description/) 
 - [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/description/) 
@@ -13,3 +13,6 @@
 - [86. 分隔链表](https://leetcode.cn/problems/partition-list/description/)
 - [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/description/)
 - [链表中倒数第k个节点(140. 训练计划 II)](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/description/)
+
+# 双指针-数组问题
+- [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/)
