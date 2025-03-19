@@ -11,7 +11,7 @@ public class FindNthNodeFromEnd {
         for (int i = 0; i < cnt; i++) {
             q = q.next;
         }
-        // 此时 p q 相隔 cnt，p随q移动到链表结尾，p就是
+        // 此时 p q 相隔 cnt，p随q移动到链表结尾，p就是倒数第cnt个
         while (q != null) {
             q = q.next;
             p = p.next;
